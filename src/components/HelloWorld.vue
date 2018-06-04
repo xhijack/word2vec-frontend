@@ -21,7 +21,10 @@ export default {
   name: 'HelloWorld',
     methods: {
         onSubmit() {
-            let url = 'http://localhost:8000/most_similar?q=' + this.q;
+            /*
+                move to env dev and prod file
+             */
+            let url = 'http://35.186.150.121:8000/most_similar?q=' + this.q;
             axios.get(url).then(response => {
                 if (response.status == 200) {
                     this.response = response.data;
